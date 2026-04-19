@@ -43,7 +43,7 @@ const uploadSchema = z.object({
     required_error: "Choose a proficiency level",
   }),
   details: z.string().max(2000).optional(),
-  proof: z.instanceof(FileList).optional(),
+  proof: z.any().optional(),
 });
 
 type UploadValues = z.infer<typeof uploadSchema>;
